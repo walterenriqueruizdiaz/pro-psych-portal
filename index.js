@@ -9,6 +9,8 @@ const passport = require('passport');
 const dotenv = require('dotenv');
 const fs = require('fs');
 
+console.log("SERVER STARTING...");
+
 // Log unhandled errors
 process.on('uncaughtException', (err) => {
     console.error('CRITICAL: Uncaught Exception:', err);
@@ -161,6 +163,8 @@ app.use((err, req, res, next) => {
         stack: process.env.NODE_ENV === 'production' ? null : err.stack
     });
 });
+
+console.log("ABOUT TO LISTEN...");
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT} (bound to 0.0.0.0)`);

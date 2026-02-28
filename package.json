@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
+    "start": "npx prisma db push && node index.js",
     "dev": "nodemon index.js",
     "postinstall": "prisma generate"
   },
